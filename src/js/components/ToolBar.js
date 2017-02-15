@@ -6,7 +6,12 @@ import UndoRedo from "../components/tools/UndoRedo";
 export default class ToolBar extends React.Component {
   constructor(props){
     super(props)
-    this.colors = ['black', 'white', 'red', 'blue', 'green', 'yellow', 'orange', 'brown', 'violet']
+    this.colors = ['#FFF', '#000', '#F00',
+                    '#0F0', '#00F', '#FFFF00',
+                    '#FF00FF', '#00FFFF', '#8B4513',
+                    '#FFA500', '#FFAEB9', '#eee',
+                    '#666', '#CD2626', '#228B22',
+                    '#87CEFF', '#BF3EFF']
     this.lineWeights = ['5', '10', '15', '20']
   }
 

@@ -10,7 +10,7 @@ export default class Paint extends React.Component {
       super();
 
       this.state = {
-        currentColor: "black",
+        currentColor: "#000",
         currentLineWeight: "5",
         undoDisabled: true,
         redoDisabled: true,
@@ -63,7 +63,7 @@ export default class Paint extends React.Component {
 
       <div class="row">
 
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-3">
 
           <div id="accordion" role="tablist">
             <div class="panel panel-default">
@@ -91,7 +91,7 @@ export default class Paint extends React.Component {
           </div>
         </div>
         <div id="canvas-container"
-             class="col-sm-12 col-md-8">
+             class="col-sm-12 col-md-9">
           <Canvas currentColor={this.state.currentColor}
                   currentLineWeight={this.state.currentLineWeight}
                   toggleUndo={this.toggleUndo}

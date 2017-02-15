@@ -25,17 +25,25 @@ export default class ColorBox extends React.Component {
 
     var ColorBoxStyle = {
       backgroundColor: this.props.bgcolor,
-      border: "1px solid #333",
-      height: "20px",
-      width: "20px",
+      border: "1px solid #666",
+      height: "25px",
+      width: "25px",
       display: "inline-block",
       marginRight: "8px",
-      opacity: this.state.isActive ? 1 : 0.3,
-      cursor: "pointer"
+      marginBottom: "5px",
+      cursor: "pointer",
+      borderRadius: "50%",
+      padding: "5px 5px",
     };
+
+    var CheckStyle = {
+      position: "absolute",
+      color: this.props.bgcolor == "#000" ? "#FFF" : "#000",
+    }
 
     return (
       <div style={ColorBoxStyle} onClick={this.changeColor}>
+        { this.state.isActive ? <div class="fa fa-check" style={CheckStyle}></div>: null}
       </div>
     );
   }
