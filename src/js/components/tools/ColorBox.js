@@ -11,6 +11,7 @@ export default class ColorBox extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
+    //highlight color if it is the currently selected
     if (newProps.currentColor !== this.props.currentColor) {
       this.setState({ isActive: newProps.currentColor == newProps.bgcolor });
     }

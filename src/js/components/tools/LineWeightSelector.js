@@ -11,6 +11,7 @@ export default class LineWeightSelector extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
+    //highlight line if it is the currently selected
     if (newProps.currentLineWeight !== this.props.currentLineWeight) {
       this.setState({ isActive: newProps.currentLineWeight == newProps.lineWeight });
     }

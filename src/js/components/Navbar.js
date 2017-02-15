@@ -13,7 +13,7 @@ export default class Navbar extends React.Component {
           <div class="container-fluid">
               <div class="navbar-header">
                   <a class="navbar-brand" href="#">
-                      <img src="http://1.bp.blogspot.com/-MkpqYVRXVDI/VbAkrianG7I/AAAAAAAAAzc/qPwGRarjrKo/s1600/paint.png"
+                      <img src="../img/paint.png"
                           height="100%" />
                   </a>
                   <span class="navbar-brand">Paint</span>

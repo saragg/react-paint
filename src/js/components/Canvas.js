@@ -19,10 +19,6 @@ export default class Canvas extends React.Component {
 
     this.points = new Array();
     this.undos = new Array();
-
-    // this.ctx = null
-
-    // this.state.color = this.props.state.currentColor
   }
 
   componentDidMount() {
@@ -36,7 +32,9 @@ export default class Canvas extends React.Component {
     this.respondCanvas();
   }
 
+  //Resize canvan
   respondCanvas(){
+
       let container = document.getElementById("canvas-container")
 
       this.ctx.canvas.width = container.offsetWidth - 30;
@@ -45,7 +43,9 @@ export default class Canvas extends React.Component {
       this.redraw()
   }
 
+  // Draw canvas content
   redraw(){
+
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height); // Clears the canvas
     
     this.ctx.lineJoin = "round";
@@ -67,6 +67,7 @@ export default class Canvas extends React.Component {
   }
 
 
+  // Save points drawn in the canvas
   addClick(x, y, dragging) {
     this.points.push({
       clickX: x,
@@ -77,6 +78,7 @@ export default class Canvas extends React.Component {
     })
   }
 
+  // Handle mouse down event
   onMouseDown(e) {
     const {top, left} = this.canvas.getBoundingClientRect();
       
@@ -91,6 +93,7 @@ export default class Canvas extends React.Component {
     this.props.toggleRedo(false)
   }
 
+  // Handle mouse move event
   onMouseMove(e) {
     if(this.paint){
       const {top, left} = this.canvas.getBoundingClientRect();
@@ -99,14 +102,17 @@ export default class Canvas extends React.Component {
     }
   }
 
+  // Handle mouse out event
   onMouseOut(e) {
     this.paint = false;
   }
 
+  // Handle mouse up event
   onMouseUp(e) {
     this.paint = false;
   }
 
+  // Undo last drawn stroke
   undo(){
     let lastCheckpoint = _.findLastIndex(this.points, {'dragging': false});
     let undonePoints = this.points.splice(lastCheckpoint)
@@ -121,6 +127,8 @@ export default class Canvas extends React.Component {
     this.redraw();
   }
 
+
+  // Redo last undone stroke
   redo(){
     let toRedrawPoints = this.undos.pop()
     this.points = this.points.concat(toRedrawPoints)

@@ -13,6 +13,7 @@ export default class UndoRedo extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
+    // Set disabled/enabled buttons state
     if (newProps.undoDisabled !== this.props.undoDisabled) {
       this.setState({ undoDisabled: newProps.undoDisabled});
     }

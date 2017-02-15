@@ -1,10 +1,14 @@
 # Get Started
 ## Install
-Make sure you have node.js and webpack globally installed
+Make sure you have node.js globally installed
+
+Install webpack
 ```
 npm install webpack -g
 npm install webpack-dev-server -g
 ```
+
+Make sure you are at the project root folder.
 
 Install the project dependencies
 ```
@@ -13,7 +17,7 @@ npm install
 
 ## Run client
 ```
-webpack-dev-server --content-base src --inline --hot --port 3000
+npm run dev
 ```
 See how it works on [http://localhost:3000/](http://localhost:3000/)
 

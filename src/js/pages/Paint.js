@@ -25,10 +25,6 @@ export default class Paint extends React.Component {
       this.redo = this.redo.bind(this);
   }
 
-  componentDidMount() {
-    var th = this;    
-  }
-
   changeCurrentColor(color) {
     this.setState({
       currentColor: color
@@ -63,12 +59,6 @@ export default class Paint extends React.Component {
 
   render() {
 
-    const CanvasContainerStyle = {
-      // overflow: "scroll",
-      // width: "100%",
-      // height: "100%"
-    }
-
     return (
 
       <div class="row">
@@ -101,7 +91,7 @@ export default class Paint extends React.Component {
           </div>
         </div>
         <div id="canvas-container"
-             class="col-sm-12 col-md-8"style={CanvasContainerStyle}>
+             class="col-sm-12 col-md-8">
           <Canvas currentColor={this.state.currentColor}
                   currentLineWeight={this.state.currentLineWeight}
                   toggleUndo={this.toggleUndo}
